@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="/manifest.json">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.8.0/dist/umd/supabase.js"></script>
   <script type="module" src="app.js"></script>
   <title>Reserva de Vuelo</title>
@@ -40,6 +41,15 @@
     <footer>
     </footer>
   </div>
+  
+  <script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js")
+            .then(() => console.log("Service Worker registrado con éxito."))
+            .catch((error) => console.error("Error al registrar el Service Worker:", error));
+    }
+</script>
+
 </body>
 </html>
 
